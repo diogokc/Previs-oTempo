@@ -1,4 +1,4 @@
-import { NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import ListarProduto from './src/paginas/ListarProduto'
@@ -10,13 +10,13 @@ import Mapa from './src/paginas/Mapa/Mapa'
 
 import Login from './src/Login/index'
 import LoginEmpresa from './src/paginas/LoginEmpresa'
-const Stack = createStackNavigator(); 
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer >
       <Stack.Navigator initialRouteName="Login">
-      <Stack.Screen
+        <Stack.Screen
           name="Login"
           component={Login}
           options={{
@@ -26,7 +26,7 @@ export default function App() {
         />
 
 
-      <Stack.Screen
+        <Stack.Screen
           name="Tempo"
           component={Tempo}
           options={{
@@ -35,7 +35,7 @@ export default function App() {
           }}
         />
 
-<Stack.Screen
+        <Stack.Screen
           name="LoginEmpresa"
           component={LoginEmpresa}
           options={{
@@ -43,7 +43,7 @@ export default function App() {
           }}
         />
 
-<Stack.Screen
+        <Stack.Screen
           name="Mapa"
           component={Mapa}
           options={{

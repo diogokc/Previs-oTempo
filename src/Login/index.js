@@ -3,6 +3,7 @@ import { View, Text, KeyboardAvoidingView, Platform, TextInput, TouchableOpacity
 import styles from "./style";
 import { MaterialCommunityIcons } from "@expo/vector-icons"
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {app} from '../config/firebase'
 
 export default function Login( {navigation} ) {
     const [email, setEmail] = useState("")
@@ -10,9 +11,10 @@ export default function Login( {navigation} ) {
     const [errorLogin, setErroLogin] = useState("")
 
     const loginFirebase = () => {
-        const auth = getAuth();
+        const auth = getAuth(app);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
+                console.log("Passou")
                 navigation.navigate("ListarProduto", {uid: userCredential.user.uid,});
             })
             .catch((error) => {
